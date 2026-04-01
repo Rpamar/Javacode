@@ -48,7 +48,12 @@ jobs:
       - name: Verify WAR artifact exists
         run: |
           ls -l target
-          [[ -f target/*.war ]] || (echo "WAR not found" && exit 1)
+          WARFILE=$(ls target/*.war 2>/dev/null || true)
+          if [ -z "$WARFILE" ]; then
+            echo "WAR not found"
+            exit 1
+          fi
+          echo "WAR found: $WARFILE"
 
       - name: Upload WAR artifact
         uses: actions/upload-artifact@v4
