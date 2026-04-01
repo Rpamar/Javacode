@@ -1,0 +1,13 @@
+com\hotelbooking\entity\Room.class
+com\hotelbooking\repository\RoomRepository.class
+com\hotelbooking\entity\Booking.class
+com\hotelbooking\repository\BookingRepository.class
+com\hotelbooking\HotelBookingApplication.class
+com\hotelbooking\service\BookingService.class
+com\hotelbooking\controller\RoomController.class
+com\hotelbooking\controller\HotelController.class
+com\hotelbooking\repository\HotelRepository.class
+com\hotelbooking\controller\BookingController.class
+com\hotelbooking\service\HotelService.class
+com\hotelbooking\service\RoomService.class
+com\hotelbooking\entity\Hotel.class
