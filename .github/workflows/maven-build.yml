@@ -68,8 +68,10 @@ jobs:
 
       - name: Set WAR file path
         run: |
-          WAR_FILE=$(ls target/*.war | grep -v .original)
-          echo "WAR_FILE=$WAR_FILE" >> $GITHUB_ENV
+          ORIG_WAR=$(ls target/*.war | grep -v .original)
+          ROOT_WAR=target/ROOT.war
+          cp "$ORIG_WAR" "$ROOT_WAR"
+          echo "WAR_FILE=$ROOT_WAR" >> $GITHUB_ENV
 
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v2
