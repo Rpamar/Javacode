@@ -60,3 +60,20 @@ jobs:
         with:
           name: war-artifact
           path: target/*.war
+
+      - name: Azure Login
+        uses: azure/login@v1
+        with:
+          creds: '{"clientId":"${{ secrets.AZURE_CLIENT_ID }}","clientSecret":"${{ secrets.AZURE_CLIENT_SECRET }}","subscriptionId":"${{ secrets.AZURE_SUBSCRIPTION_ID }}","tenantId":"${{ secrets.AZURE_TENANT_ID }}"}'
+
+      - name: Set WAR file path
+        run: |
+          WAR_FILE=$(ls target/*.war | grep -v .original)
+          echo "WAR_FILE=$WAR_FILE" >> $GITHUB_ENV
+
+      - name: Deploy to Azure Web App
+        uses: azure/webapps-deploy@v2
+        with:
+          app-name: hotelbookings-ws
+          resource-group-name: hotelbookings-rg
+          package: ${{ env.WAR_FILE }}
