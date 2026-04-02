@@ -17,6 +17,3 @@ public class HotelBookingApplication extends SpringBootServletInitializer {
         SpringApplication.run(HotelBookingApplication.class, args);
     }
 }
-
-
-############test
