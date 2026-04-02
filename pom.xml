@@ -19,6 +19,7 @@
     <maven.compiler.source>17</maven.compiler.source>
     <maven.compiler.target>17</maven.compiler.target>
     <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+    <sonar.organization>rpamar</sonar.organization>
     <sonar.projectKey>hotelbooking</sonar.projectKey>
     <sonar.projectName>Hotel Booking</sonar.projectName>
     <sonar.projectVersion>1.0</sonar.projectVersion>

@@ -46,6 +46,7 @@ jobs:
           mvn -B clean verify sonar:sonar
           -Dsonar.projectKey=Rpamar_Javacode
           -Dsonar.projectName="Javacode"
+          -Dsonar.organization="rpamar"
           -Dsonar.host.url="https://sonarcloud.io"
           -Dsonar.token="0c27630e225c11a52c9ccb5b030b4c3d6fa12379"
 
